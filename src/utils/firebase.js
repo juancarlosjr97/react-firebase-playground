@@ -1,6 +1,10 @@
 import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 
+/**
+ * This configuration is based on this particular Firebase project.
+ * When forking the project, this configuration will need to be updated to match the configuration.
+ */
 const firebaseConfig = {
   apiKey: "AIzaSyDx4_XJg7dqlafqNExiM35jXMPaP_j1IL0",
   authDomain: "react-firebase-playground-gh.firebaseapp.com",
