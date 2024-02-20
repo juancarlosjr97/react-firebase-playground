@@ -21,6 +21,39 @@ The key objectives are outlined below:
 
 This project is available on this [URL](https://react-firebase-playground-gh.web.app).
 
+## Guide
+
+### GitHub Project Setup
+
+1. Create a new blank repository on GitHub. See the guide on GitHub for instructions here: https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories
+
+2. Open the repository using Codespaces. See the guide on GitHub for instructions here: https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-in-visual-studio-code#using-the-insiders-desktop-application-for-codespaces
+
+After opening the codespaces environment on Visual Studio Code, it is ready for development.
+
+### React Web App
+
+This section will create a React app using [Create React App](https://create-react-app.dev/).
+
+Create a new react app
+
+```bash
+npx create-react-app . -y
+```
+
+The command above will create a new app ready to run and create a README with instructions how to run the app.
+
+After the `create-react-app` has finished, from the terminal, run:
+
+```bash
+npm run start
+```
+
+This will start the app on the port 3000 and available for development.
+
+> [!NOTE]
+> On a network that permits port forwarding, it will launch a live version of the page using a development environment provided by GitHub. If restricted by the network, open the Codespace session using VS Code on the Desktop, then execute the same command. It should be running on the local environment, accessible via http://localhost:3000 on port 3000
+
 ## Development
 
 This sections shows high-level commands when doing development on this project.
