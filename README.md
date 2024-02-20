@@ -10,6 +10,5 @@ This project is a guide on how to create a React Web App using Firebase as the b
 
 ## Support Documentation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [React](https://react.dev/)
