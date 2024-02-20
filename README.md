@@ -17,6 +17,10 @@ The key objectives are outlined below:
 - **Automated Deployment with GitHub Actions**: Configure GitHub Actions to automate the deployment process, ensuring precision in updates for both the live environment and ephemeral environments dedicated to Pull Requests.
 - **User Interaction Enhancement**: Integrate a real-time, on-click counter utilizing Firebase and Cloud Firestore, complemented by an optimal loading state for an enhanced user experience.
 
+## Demo
+
+This project is available on this [URL](https://react-firebase-playground-gh.web.app).
+
 ## Development
 
 This sections shows high-level commands when doing development on this project.
