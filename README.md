@@ -19,7 +19,7 @@ The key objectives are outlined below:
 
 ## Demo
 
-This project is available on this [URL](https://react-firebase-playground-gh.web.app).
+This project demo is available on this [URL](https://react-firebase-playground-neo.web.app).
 
 ## Guide
 
@@ -69,7 +69,7 @@ From the project overview page.
 
 1. Click on Build and select `Firestore Database`, and then click on `Create database`
 2. Select the location closer to the target users. As a best practice, choose a location close to the target users. For instance, for European target users, select a location in Europe.
-3. Select in the secure rules `Start in production mode`. This database will allow read only `read` to the database, and click on create.
+3. Select in the secure rules `Start in production mode`. This database will allow `read` only to the database, and click on create.
 
 After the database has been created, click on `Rules` and update the rule with the following rules:
 
@@ -80,10 +80,11 @@ service cloud.firestore {
   match /databases/{database}/documents {
     // Allow read and write only to the "counter/global" document
     match /counter/global {
-      allow read, write: if resource.data.keys().hasAll(['data']);
+      allow read, write: if resource == null || resource.data.keys().hasAll(['data']);
     }
   }
 }
+
 ```
 
 The above security rules allows allows reading and writing to the `counter/global` document in Cloud Firestore only if that document contains a field named `data`.
@@ -128,6 +129,13 @@ permissions:
   contents: read
   pull-requests: write
 ```
+
+The GitHbu Actions create two workflows:
+
+1. **Firebase Hosting Merge**: It will deploy the changes automatically to the live environment when changes are merged into the default branch.
+2. **Firebase Hosting Pull Request**: It will deploy the changes to a preview site using the changes on the Pull Request. It is an ephemeral environmental that will last a week.
+
+To learn more about GitHub Actions, read here: <https://github.com/features/actions>.
 
 ##### Register your app
 
@@ -184,7 +192,7 @@ After it is executed, it should returned a similar message
 ✔  Deploy complete!
 
 Project Console: ***
-Hosting URL: https://react-firebase-playground-gh.web.app
+Hosting URL: https://react-firebase-playground-neo.web.app
 ```
 
 This make the react app available on a live environment accessible from the internet.
@@ -197,7 +205,7 @@ Utilizing Firestore, a counter is employed to dynamically track changes in real-
 
 #### Create React Hook useCounter
 
-React custom hooks are reusable functions in React applications that encapsulate and share logic across components. They follow the "use" naming convention and provide a clean way to manage state, side effects, and other functionalities. Read more here: https://react.dev/learn/reusing-logic-with-custom-hooks.
+React custom hooks are reusable functions in React applications that encapsulate and share logic across components. They follow the "use" naming convention and provide a clean way to manage state, side effects, and other functionalities. Read more here: <https://react.dev/learn/reusing-logic-with-custom-hooks>.
 
 1. Create a file at `./src/hooks/useCounter.js`
 2. Copy the content of the [`useCounter.js`](./src/hooks/useCounter.js) and paste it on the `useCounter.js` on your project
