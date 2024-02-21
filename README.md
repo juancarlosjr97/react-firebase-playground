@@ -25,9 +25,9 @@ This project is available on this [URL](https://react-firebase-playground-gh.web
 
 ### GitHub Project Setup
 
-1. Create a new blank repository on GitHub. See the guide on GitHub for instructions here: https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories
+1. Create a new blank repository on GitHub. See the guide on GitHub for instructions here: <https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories>
 
-2. Open the repository using Codespaces. See the guide on GitHub for instructions here: https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-in-visual-studio-code#using-the-insiders-desktop-application-for-codespaces
+2. Open the repository using Codespaces. See the guide on GitHub for instructions here: <https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-in-visual-studio-code#using-the-insiders-desktop-application-for-codespaces>
 
 After opening the codespaces environment on Visual Studio Code, it is ready for development.
 
@@ -52,7 +52,144 @@ npm run start
 This will start the app on the port 3000 and available for development.
 
 > [!NOTE]
-> On a network that permits port forwarding, it will launch a live version of the page using a development environment provided by GitHub. If restricted by the network, open the Codespace session using VS Code on the Desktop, then execute the same command. It should be running on the local environment, accessible via http://localhost:3000 on port 3000
+> On a network that permits port forwarding, it will launch a live version of the page using a development environment provided by GitHub. If restricted by the network, open the Codespace session using VS Code on the Desktop, then execute the same command. It should be running on the local environment, accessible via <http://localhost:3000> on port 3000.
+
+### Firebase Project Setup
+
+Create a project new on Firebase with default configuration. See this guide for instructions: <https://support.google.com/firebase/answer/9326094>
+
+> [!NOTE]
+> This project has been setup without analytics.
+
+#### Firestore Database
+
+Cloud Firestore is a flexible, scalable database for mobile, web, and server development from Firebase and Google Cloud. Read more about here: <https://firebase.google.com/docs/firestore>.
+
+From the project overview page.
+
+1. Click on Build and select `Firestore Database`, and then click on `Create database`
+2. Select the location closer to the target users. As a best practice, choose a location close to the target users. For instance, for European target users, select a location in Europe.
+3. Select in the secure rules `Start in production mode`. This database will allow read only `read` to the database, and click on create.
+
+After the database has been created, click on `Rules` and update the rule with the following rules:
+
+```firebase
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read and write only to the "counter/global" document
+    match /counter/global {
+      allow read, write: if resource.data.keys().hasAll(['data']);
+    }
+  }
+}
+```
+
+The above security rules allows allows reading and writing to the `counter/global` document in Cloud Firestore only if that document contains a field named `data`.
+
+#### Hosting
+
+Firebase Hosting provides fast and secure hosting for your web app, static and dynamic content, and microservices.
+
+Click on Build and select `Hosting`, and then click on `Get started`
+
+Follow the instructions to setup firebase hosting
+
+##### Install Firebase CLI
+
+Run `npm install -g firebase-tools` and click on show steps for SDK setup.
+
+##### Initialize your project
+
+- Firebase Login
+  - Run firebase login and click on the URL to authorize the environment to communicate to Firebase using `firebase login --no-localhost` and after logging in it should show a message `Success! Logged in as ****`
+- Firebase Init
+  - Run `firebase init`
+  - Select `Firestore: Configure security rules and indexes files for Firestore` and `Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys`
+  - Firestore Setup click on accept what file should be used for Firestore Rules? `Press enter`
+  - What file should be used for Firestore indexes? `Press enter`
+  - What do you want to use as your public directory? `build`
+  - Configure as a single-page app (rewrite all urls to /index.html)? `y`
+  - Set up automatic builds and deploys with GitHub? (y/N) `y`
+  - File build/index.html already exists. Overwrite? (y/N) `N`
+  - Enters your project URL for the GitHub action `Enter your project URL in the format of user/repository-name`. For example, `juancarlosjr97/react-firebase-playground`
+  - What script should be run before every deploy? (npm ci && npm run build) `Press enter`
+  - Set up automatic deployment to your site's live channel when a PR is merged? `Y`
+  - What is the name of the GitHub branch associated with your site's live channel? `main` unless your default branch is different.
+
+Due to an [open issue](https://github.com/FirebaseExtended/action-hosting-deploy/issues/108#issuecomment-1406627354) on GitHub with Firebase GitHub Actions, the file created by the firebase setup on the `./.github/workflows` must be updated manually.
+
+The `firebase-hosting-pull-request.yml` needs to be added the following permissions, after the workflow configuration.
+
+```yaml
+permissions:
+  checks: write
+  contents: read
+  pull-requests: write
+```
+
+##### Register your app
+
+Enter a name for your app, for example `React Firebase Playground`
+
+##### Add Firebase SDK
+
+Follow the instructions on this step, by running:
+
+```bash
+npm install firebase
+```
+
+And copy the SDK configuration and paste it on a new file at `src/utils/firebase.js` using this template.
+
+```js
+import { getFirestore } from "firebase/firestore";
+import { initializeApp } from "firebase/app";
+
+/**
+ * This configuration is based on this particular Firebase project.
+ * When forking the project, this configuration will need to be updated to match the configuration.
+ */
+const firebaseConfig = {
+  // Paste here the SDK configuration
+};
+
+const firebaseApp = initializeApp(firebaseConfig);
+
+const firebaseDatabase = getFirestore(firebaseApp);
+
+export { firebaseApp, firebaseDatabase };
+```
+
+##### Deploying the App
+
+After all the changes, now the app can be deployed.
+
+1. Build the react app
+
+   ```bash
+   npm run build
+   ```
+
+2. Deploy to Firebase
+
+   ```bash
+   firebase deploy
+   ```
+
+After it is executed, it should returned a similar message
+
+```bash
+✔  Deploy complete!
+
+Project Console: ***
+Hosting URL: https://react-firebase-playground-gh.web.app
+```
+
+This make the react app available on a live environment accessible from the internet.
+
+After this has been completed, we can commit all the changes to save the current work state to the repository.
 
 ## Development
 
