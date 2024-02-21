@@ -191,6 +191,25 @@ This make the react app available on a live environment accessible from the inte
 
 After this has been completed, we can commit all the changes to save the current work state to the repository.
 
+### Adding Real Time Counter using Firebase
+
+Utilizing Firestore, a counter is employed to dynamically track changes in real-time.
+
+#### Create React Hook useCounter
+
+React custom hooks are reusable functions in React applications that encapsulate and share logic across components. They follow the "use" naming convention and provide a clean way to manage state, side effects, and other functionalities. Read more here: https://react.dev/learn/reusing-logic-with-custom-hooks.
+
+1. Create a file at `./src/hooks/useCounter.js`
+2. Copy the content of the [`useCounter.js`](./src/hooks/useCounter.js) and paste it on the `useCounter.js` on your project
+
+#### Use useCounter
+
+Copy the content of the [`App.js`](./src/App.js) and paste it on the `App.js` on your project.
+
+### Going Live
+
+After updating the project with all the above changes, commit and push the changes to the default branch and let the GitHub Action to deploy the changes to the live environment, or run `firebase deploy` to update the changes from the development environment to production.
+
 ## Development
 
 This sections shows high-level commands when doing development on this project.
