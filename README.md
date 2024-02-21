@@ -35,7 +35,7 @@ After opening the codespaces environment on Visual Studio Code, it is ready for 
 
 This section will create a React app using [Create React App](https://create-react-app.dev/).
 
-Create a new react app
+Create a new React app
 
 ```bash
 npx create-react-app . -y
@@ -49,26 +49,28 @@ After the `create-react-app` has finished, from the terminal, run:
 npm run start
 ```
 
-This will start the app on the port 3000 and available for development.
+This will start the app on port 3000 and available for development.
 
 > [!NOTE]
 > On a network that permits port forwarding, it will launch a live version of the page using a development environment provided by GitHub. If restricted by the network, open the Codespace session using VS Code on the Desktop, then execute the same command. It should be running on the local environment, accessible via <http://localhost:3000> on port 3000.
 
 ### Firebase Project Setup
 
-Create a project new on Firebase with default configuration. See this guide for instructions: <https://support.google.com/firebase/answer/9326094>
+Create a project new on Firebase with the default configuration. See this guide for instructions: <https://support.google.com/firebase/answer/9326094>.
+
+Firebase offers multiple plans, and the free tier (Spark Plan) is sufficient to develop this project. For more information, read here: https://firebase.google.com/pricing
 
 > [!NOTE]
-> This project has been setup without analytics.
+> This project has been set up without analytics.
 
 #### Firestore Database
 
-Cloud Firestore is a flexible, scalable database for mobile, web, and server development from Firebase and Google Cloud. Read more about here: <https://firebase.google.com/docs/firestore>.
+Cloud Firestore is a flexible, scalable mobile, web, and server development database from Firebase and Google Cloud. Read more about it here: <https://firebase.google.com/docs/firestore>.
 
 From the project overview page.
 
 1. Click on Build and select `Firestore Database`, and then click on `Create database`
-2. Select the location closer to the target users. As a best practice, choose a location close to the target users. For instance, for European target users, select a location in Europe.
+2. Select the location closer to the target users. As a best practice, you can choose a location close to the target users. For instance, for European target users, select a location in Europe.
 3. Select in the secure rules `Start in production mode`. This database will allow `read` only to the database, and click on create.
 
 After the database has been created, click on `Rules` and update the rule with the following rules:
@@ -87,7 +89,7 @@ service cloud.firestore {
 
 ```
 
-The above security rules allows allows reading and writing to the `counter/global` document in Cloud Firestore only if that document contains a field named `data`.
+The above security rules allows reading and writing to the `counter/global` document in Cloud Firestore only if that document contains a field named `data`.
 
 #### Hosting
 
@@ -95,7 +97,7 @@ Firebase Hosting provides fast and secure hosting for your web app, static and d
 
 Click on Build and select `Hosting`, and then click on `Get started`
 
-Follow the instructions to setup firebase hosting
+Follow the instructions to set up Firebase hosting
 
 ##### Install Firebase CLI
 
@@ -104,7 +106,7 @@ Run `npm install -g firebase-tools` and click on show steps for SDK setup.
 ##### Initialize your project
 
 - Firebase Login
-  - Run firebase login and click on the URL to authorize the environment to communicate to Firebase using `firebase login --no-localhost` and after logging in it should show a message `Success! Logged in as ****`
+  - Run Firebase login and click on the URL to authorize the environment to communicate to Firebase using `firebase login --no-localhost` and after logging in it should show a message `Success! Logged in as ****`
 - Firebase Init
   - Run `firebase init`
   - Select `Firestore: Configure security rules and indexes files for Firestore` and `Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys`
@@ -130,7 +132,7 @@ permissions:
   pull-requests: write
 ```
 
-The GitHbu Actions create two workflows:
+The GitHub Actions create two workflows:
 
 1. **Firebase Hosting Merge**: It will deploy the changes automatically to the live environment when changes are merged into the default branch.
 2. **Firebase Hosting Pull Request**: It will deploy the changes to a preview site using the changes on the Pull Request. It is an ephemeral environmental that will last a week.
@@ -139,7 +141,7 @@ To learn more about GitHub Actions, read here: <https://github.com/features/acti
 
 ##### Register your app
 
-Enter a name for your app, for example `React Firebase Playground`
+Enter a name for your app, for example, `React Firebase Playground`
 
 ##### Add Firebase SDK
 
@@ -149,7 +151,7 @@ Follow the instructions on this step, by running:
 npm install firebase
 ```
 
-And copy the SDK configuration and paste it on a new file at `src/utils/firebase.js` using this template.
+Copy the SDK configuration and paste it on a new file at `src/utils/firebase.js` using this template.
 
 ```js
 import { getFirestore } from "firebase/firestore";
@@ -174,7 +176,7 @@ export { firebaseApp, firebaseDatabase };
 
 After all the changes, now the app can be deployed.
 
-1. Build the react app
+1. Build the React app
 
    ```bash
    npm run build
@@ -186,7 +188,7 @@ After all the changes, now the app can be deployed.
    firebase deploy
    ```
 
-After it is executed, it should returned a similar message
+After it is executed, it should return a similar message as below
 
 ```bash
 ✔  Deploy complete!
@@ -195,13 +197,13 @@ Project Console: ***
 Hosting URL: https://react-firebase-playground-neo.web.app
 ```
 
-This make the react app available on a live environment accessible from the internet.
+This makes the react app available on a live environment accessible from the internet.
 
 After this has been completed, we can commit all the changes to save the current work state to the repository.
 
 ### Adding Real Time Counter using Firebase
 
-Utilizing Firestore, a counter is employed to dynamically track changes in real-time.
+Utilizing Firestore, a counter is employed to dynamically track changes in realtime.
 
 #### Create React Hook useCounter
 
@@ -220,11 +222,11 @@ After updating the project with all the above changes, commit and push the chang
 
 ## Development
 
-This sections shows high-level commands when doing development on this project.
+This section shows high-level commands when doing development on this project.
 
 ### Node Dependencies
 
-1. Install node and use the version of the project
+1. Install `node` and use the version of the project
 
    ```bash
    nvm use
@@ -254,7 +256,7 @@ To create an optimized production build run
 npm run build
 ```
 
-And to run it locally the production build execute the command `npx serve -s build`
+To run it locally the production build executes the command `npx serve -s build`
 
 ### Automated Tests
 
