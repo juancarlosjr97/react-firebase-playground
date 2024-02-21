@@ -23,6 +23,17 @@ const App = () => {
         <button onClick={onCounterUpdate} disabled={loading}>
           Increment Counter
         </button>
+
+        <br />
+
+        <a
+          className="App-link"
+          href="https://react.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
       </header>
     </div>
   );
