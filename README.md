@@ -267,4 +267,5 @@ npm run test
 ## Support Documentation
 
 - [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [Firebase Community](https://firebase.google.com/community)
 - [React](https://react.dev/)
