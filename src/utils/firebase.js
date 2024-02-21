@@ -6,12 +6,12 @@ import { initializeApp } from "firebase/app";
  * When forking the project, this configuration will need to be updated to match the configuration.
  */
 const firebaseConfig = {
-  apiKey: "AIzaSyDx4_XJg7dqlafqNExiM35jXMPaP_j1IL0",
-  authDomain: "react-firebase-playground-gh.firebaseapp.com",
-  projectId: "react-firebase-playground-gh",
-  storageBucket: "react-firebase-playground-gh.appspot.com",
-  messagingSenderId: "96310076294",
-  appId: "1:96310076294:web:f2086ed6fce04ccab88207",
+  apiKey: "AIzaSyBUlylPIH4eeV_yk7YBdEioA8UTK6Qw7S4",
+  authDomain: "react-firebase-playground-neo.firebaseapp.com",
+  projectId: "react-firebase-playground-neo",
+  storageBucket: "react-firebase-playground-neo.appspot.com",
+  messagingSenderId: "917055939120",
+  appId: "1:917055939120:web:d8b3d584fc77fa391d43f5",
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
