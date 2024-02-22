@@ -4,9 +4,9 @@ This project is a guide on how to create a React Web App using Firebase as the b
 
 ## Prerequisites
 
-- [GitHub](https://docs.github.com/en/get-started/quickstart/creating-an-account-on-github)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Firebase](https://firebase.google.com/) and this requires a Google account to link to a Firebase project.
+- [GitHub][1]
+- [Visual Studio Code][2]
+- [Firebase][3] and this requires a Google account to link to a Firebase project.
 
 ## Overview
 
@@ -19,15 +19,14 @@ The key objectives are outlined below:
 
 ## Demo
 
-This project demo is available on this [URL](https://react-firebase-playground-neo.web.app).
+This project demo is available on this [URL][4].
 
 ## Guide
 
 ### GitHub Project Setup
 
-1. Create a new blank repository on GitHub. See the guide on GitHub for instructions here: <https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories>
-
-2. Open the repository using Codespaces. See the guide on GitHub for instructions here: <https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-in-visual-studio-code#using-the-insiders-desktop-application-for-codespaces>
+1. Create a new blank repository on GitHub. See the guide on GitHub for instructions [here][5]
+2. Open the repository using Codespaces. See the guide on GitHub for instructions [here][6]
 
 After opening the codespaces environment on Visual Studio Code, it is ready for development.
 
@@ -56,16 +55,16 @@ This will start the app on port 3000 and available for development.
 
 ### Firebase Project Setup
 
-Create a project new on Firebase with the default configuration. See this guide for instructions: <https://support.google.com/firebase/answer/9326094>.
+Create a project new on Firebase with the default configuration. See this guide for instructions [here][7].
 
-Firebase offers multiple plans, and the free tier (Spark Plan) is sufficient to develop this project. For more information, read here: https://firebase.google.com/pricing
+Firebase offers multiple plans, and the free tier (Spark Plan) is sufficient to develop this project. For more information, read [here][8].
 
 > [!NOTE]
 > This project has been set up without analytics.
 
 #### Firestore Database
 
-Cloud Firestore is a flexible, scalable mobile, web, and server development database from Firebase and Google Cloud. Read more about it here: <https://firebase.google.com/docs/firestore>.
+Cloud Firestore is a flexible, scalable mobile, web, and server development database from Firebase and Google Cloud. Read more about it [here][9]
 
 From the project overview page.
 
@@ -121,7 +120,7 @@ Run `npm install -g firebase-tools` and click on show steps for SDK setup.
   - Set up automatic deployment to your site's live channel when a PR is merged? `Y`
   - What is the name of the GitHub branch associated with your site's live channel? `main` unless your default branch is different.
 
-Due to an [open issue](https://github.com/FirebaseExtended/action-hosting-deploy/issues/108#issuecomment-1406627354) on GitHub with Firebase GitHub Actions, the file created by the firebase setup on the `./.github/workflows` must be updated manually.
+Due to an [open issue][10] on GitHub with Firebase GitHub Actions, the file created by the firebase setup on the `./.github/workflows` must be updated manually.
 
 The `firebase-hosting-pull-request.yml` needs to be added the following permissions, after the workflow configuration.
 
@@ -137,7 +136,7 @@ The GitHub Actions create two workflows:
 1. **Firebase Hosting Merge**: It will deploy the changes automatically to the live environment when changes are merged into the default branch.
 2. **Firebase Hosting Pull Request**: It will deploy the changes to a preview site using the changes on the Pull Request. It is an ephemeral environmental that will last a week.
 
-To learn more about GitHub Actions, read here: <https://github.com/features/actions>.
+To learn more about GitHub Actions, read [here][17].
 
 ##### Register your app
 
@@ -207,14 +206,14 @@ Utilizing Firestore, a counter is employed to dynamically track changes in realt
 
 #### Create React Hook useCounter
 
-React custom hooks are reusable functions in React applications that encapsulate and share logic across components. They follow the "use" naming convention and provide a clean way to manage state, side effects, and other functionalities. Read more here: <https://react.dev/learn/reusing-logic-with-custom-hooks>.
+React custom hooks are reusable functions in React applications that encapsulate and share logic across components. They follow the "use" naming convention and provide a clean way to manage state, side effects, and other functionalities. Read more [here][11].
 
 1. Create a file at `./src/hooks/useCounter.js`
-2. Copy the content of the [`useCounter.js`](./src/hooks/useCounter.js) and paste it on the `useCounter.js` on your project
+2. Copy the content of the [`useCounter.js`][12] and paste it on the `useCounter.js` on your project
 
 #### Use useCounter
 
-Copy the content of the [`App.js`](./src/App.js) and paste it on the `App.js` on your project.
+Copy the content of the [`App.js`][13] and paste it on the `App.js` on your project.
 
 ### Going Live
 
@@ -268,6 +267,24 @@ npm run test
 
 ## Support Documentation
 
-- [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-- [Firebase Community](https://firebase.google.com/community)
-- [React](https://react.dev/)
+- [Create React App documentation][14].
+- [Firebase Community][15]
+- [React][16]
+
+[1]: https://docs.github.com/en/get-started/quickstart/creating-an-account-on-github
+[2]: https://code.visualstudio.com/
+[3]: https://firebase.google.com/
+[4]: https://react-firebase-playground-neo.web.app
+[5]: https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories
+[6]: https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-in-visual-studio-code#using-the-insiders-desktop-application-for-codespaces
+[7]: https://support.google.com/firebase/answer/9326094
+[8]: https://firebase.google.com/pricing
+[9]: https://firebase.google.com/docs/firestore
+[10]: https://github.com/FirebaseExtended/action-hosting-deploy/issues/108#issuecomment-1406627354
+[11]: https://react.dev/learn/reusing-logic-with-custom-hooks
+[12]: ./src/hooks/useCounter.js
+[13]: ./src/App.js
+[14]: https://facebook.github.io/create-react-app/docs/getting-started
+[15]: https://firebase.google.com/community
+[16]: https://react.dev/
+[17]: https://github.com/features/actions
