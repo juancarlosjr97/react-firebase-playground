@@ -25,7 +25,7 @@ This project demo is available on this [URL][4].
 
 ### GitHub Project Setup
 
-1. Create a new blank repository on GitHub. See the guide on GitHub for instructions [here][5]
+1. Create a new repository on GitHub with a `.gitignore` for `node`. See the guide on GitHub for instructions [here][5]
 2. Open the repository using Codespaces. See the guide on GitHub for instructions [here][6]
 
 After opening the codespaces environment on Visual Studio Code, it is ready for development.
@@ -40,7 +40,10 @@ Create a new React app
 npx create-react-app . -y
 ```
 
-The command above will create a new app ready to run and create a README with instructions how to run the app.
+The command above will create a new app ready to run and create a README with instructions on how to run the app.
+
+> [!NOTE]
+> Do not run `npm audit fix` or `npm audit fix --force` as this will change the default versions of the project to run the React app.
 
 After the `create-react-app` has finished, from the terminal, run:
 
@@ -55,7 +58,7 @@ This will start the app on port 3000 and available for development.
 
 ### Firebase Project Setup
 
-Create a project new on Firebase with the default configuration. See this guide for instructions [here][7].
+Create a new project on Firebase with the default configuration. See this guide for instructions [here][7].
 
 Firebase offers multiple plans, and the free tier (Spark Plan) is sufficient to develop this project. For more information, read [here][8].
 
@@ -152,7 +155,7 @@ npm install firebase
 
 Copy the SDK configuration and paste it on a new file at `src/utils/firebase.js` using this template.
 
-```js
+```javascritp
 import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 
@@ -196,13 +199,13 @@ Project Console: ***
 Hosting URL: https://react-firebase-playground-neo.web.app
 ```
 
-This makes the react app available on a live environment accessible from the internet.
+This makes the React app available on a live environment accessible from the internet.
 
 After this has been completed, we can commit all the changes to save the current work state to the repository.
 
 ### Adding Real Time Counter using Firebase
 
-Utilizing Firestore, a counter is employed to dynamically track changes in realtime.
+Utilizing Firestore, a counter is employed to dynamically track changes in real time.
 
 #### Create React Hook useCounter
 
