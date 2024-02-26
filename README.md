@@ -59,7 +59,7 @@ This will start the app on port 3000 and available for development.
 
 ### Firebase Project Setup
 
-Create a new project on Firebase with the default configuration. See this guide for instructions [here][7].
+Create a new project on Firebase (https://firebase.google.com/) with the default configuration. See this guide for instructions [here][7].
 
 Firebase offers multiple plans, and the free tier (Spark Plan) is sufficient to develop this project. For more information, read [here][8].
 
