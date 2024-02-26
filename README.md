@@ -128,7 +128,7 @@ Then run the command: `npm install -g firebase-tools`
 
 Due to an [open issue][10] on GitHub with Firebase GitHub Actions, the file created by the firebase setup on the `./.github/workflows` must be updated manually.
 
-The `firebase-hosting-pull-request.yml` needs to be added the following permissions, after the workflow configuration.
+The `firebase-hosting-pull-request.yml` needs to be added the following permissions, after the workflow configuration. Check it has the below permissions, and if not update them:
 
 ```yaml
 permissions:
