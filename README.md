@@ -223,9 +223,12 @@ Copy the content of the [`App.js`][13] and paste it on the `App.js` on your proj
 
 ### Going Live
 
-After updating the project with all the above changes, commit and push the changes to the default branch and let the GitHub Action to deploy the changes to the live environment, or run `firebase deploy` to update the changes from the development environment to production.
+After updating the project with all the above changes, commit and push the changes to the default branch and let the GitHub Action to deploy the changes to the live environment, or run 'nmp run build' and `firebase deploy` to update the changes from the development environment to production.
 
-## Development
+This is the end of the set up. Congratulations on getting your React app with Firebase working!!!
+
+
+## The following instructions are for when you are planning to further Develop this project
 
 For contribution and development using this project, please read the [DEVELOPMENT][18].
 
