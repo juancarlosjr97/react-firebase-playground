@@ -92,7 +92,7 @@ service cloud.firestore {
 
 ```
 
-The above security rules allows reading and writing to the `counter/global` document in Cloud Firestore only if that document contains a field named `data`.
+Click on "Publish" to save the change. The above security rules allows reading and writing to the `counter/global` document in Cloud Firestore only if that document contains a field named `data`.
 
 #### Hosting
 
