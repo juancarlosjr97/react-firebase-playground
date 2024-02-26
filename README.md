@@ -74,7 +74,7 @@ From the project overview page.
 
 1. Click on Build and select `Firestore Database`, and then click on `Create database`
 2. Select the location closer to the target users. As a best practice, you can choose a location close to the target users. For instance, for European target users, select a location in Europe.
-3. Select in the secure rules `Start in production mode`. This database will allow `read` only to the database, and click on create.
+3. In the secure rules leave the default selection `Start in production mode`. This database will allow `read` only to the database, and click on create.
 
 After the database has been created, click on `Rules` and update the rule with the following rules:
 
