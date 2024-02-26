@@ -44,6 +44,7 @@ The command above will create a new app ready to run and create a README with in
 
 > [!NOTE]
 > Do not run `npm audit fix` or `npm audit fix --force` as this will change the default versions of the project to run the React app.
+> If you are prompted to "Need to install the following packages: create-react-app@5.0.1", press "y" to proceed.  
 
 After the `create-react-app` has finished, from the terminal, run:
 
