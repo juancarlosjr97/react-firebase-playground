@@ -156,7 +156,7 @@ Follow the instructions on this step, by running:
 npm install firebase
 ```
 
-Copy the SDK configuration and paste it on a new file at `src/utils/firebase.js` using this template.
+Copy the SDK configuration and paste it on a new file at `src/utils/firebase.js` using this template. Then save the changes in Visual Studio.
 
 ```javascritp
 import { getFirestore } from "firebase/firestore";
