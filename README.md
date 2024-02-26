@@ -146,7 +146,7 @@ To learn more about GitHub Actions, read [here][17].
 
 ##### Register your app
 
-Enter a name for your app, for example, `React Firebase Playground`
+Back within the Firebase setup, enter a name for your app, for example, `React Firebase Playground`
 
 ##### Add Firebase SDK
 
