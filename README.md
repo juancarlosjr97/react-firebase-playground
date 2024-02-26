@@ -34,7 +34,7 @@ After opening the codespaces environment on Visual Studio Code, it is ready for 
 
 This section will create a React app using [Create React App](https://create-react-app.dev/).
 
-Create a new React app
+Create a new React app by typing the below command in the terminal of your Visual Studio code:
 
 ```bash
 npx create-react-app . -y
