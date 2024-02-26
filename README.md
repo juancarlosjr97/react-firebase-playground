@@ -104,7 +104,9 @@ Follow the instructions to set up Firebase hosting
 
 ##### Install Firebase CLI
 
-Run `npm install -g firebase-tools` and click on show steps for SDK setup.
+Select the checkbox for "Also show me the steps to add the Firebase JavaScript SDK to my web app".
+Go to your Visual Studio terminal. If your app is still running, click on the three dots an d select "Clear terminal" or type CTRL + z to stop it. 
+Then run the command: `npm install -g firebase-tools`
 
 ##### Initialize your project
 
