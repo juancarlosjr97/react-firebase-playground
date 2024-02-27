@@ -59,7 +59,7 @@ This will start the app on port 3000 and available for development.
 
 ### Firebase Project Setup
 
-Create a new project on Firebase (https://firebase.google.com/) with the default configuration. See this guide for instructions [here][7].
+Create a new project on [Firebase][3] with the default configuration. See this guide for instructions [here][7].
 
 Firebase offers multiple plans, and the free tier (Spark Plan) is sufficient to develop this project. For more information, read [here][8].
 
@@ -105,7 +105,7 @@ Follow the instructions to set up Firebase hosting
 ##### Install Firebase CLI
 
 Select the checkbox for "Also show me the steps to add the Firebase JavaScript SDK to my web app".
-Go to your Visual Studio terminal. If your app is still running, click on the three dots an d select "Clear terminal" or type CTRL + z to stop it. 
+Go to your Visual Studio terminal. If your app is still running, click on the three dots and select "Clear terminal" to stop it. 
 Then run the command: `npm install -g firebase-tools`
 
 ##### Initialize your project
@@ -126,9 +126,9 @@ Then run the command: `npm install -g firebase-tools`
   - Set up automatic deployment to your site's live channel when a PR is merged? `Y`
   - What is the name of the GitHub branch associated with your site's live channel? `main` unless your default branch is different.
 
-Due to an [open issue][10] on GitHub with Firebase GitHub Actions, the file created by the firebase setup on the `./.github/workflows` must be updated manually.
+Due to an [open issue][10] on GitHub with Firebase GitHub Actions, the file created by the Firebase setup on the `./.github/workflows` must be updated manually.
 
-The `firebase-hosting-pull-request.yml` needs to be added the following permissions, after the workflow configuration. Check it has the below permissions, and if not update them and save by clicking on "CTRL + z":
+The `firebase-hosting-pull-request.yml` needs to be added the following permissions, after the workflow configuration. Check it has the below permissions, and if not update them and save the file:
 
 ```yaml
 permissions:
@@ -223,7 +223,7 @@ Copy the content of the [`App.js`][13] and paste it on the `App.js` on your proj
 
 ### Going Live
 
-After updating the project with all the above changes, commit and push the changes to the default branch and let the GitHub Action to deploy the changes to the live environment, or run 'nmp run build' and `firebase deploy` to update the changes from the development environment to production.
+After updating the project with all the above changes, commit and push the changes to the default branch and let the GitHub Action to deploy the changes to the live environment, or run `nmp run build` and `firebase deploy` to update the changes from the development environment to production.
 
 This is the end of the set up. Congratulations on getting your React app with Firebase working!!!
 
