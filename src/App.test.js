@@ -1,6 +1,6 @@
 import App from "./App";
 import useCounter from "./hooks/useCounter";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 
 jest.mock("./hooks/useCounter");
 
@@ -17,14 +17,32 @@ test("renders learn react link", () => {
 });
 
 test("increments counter value on button click", () => {
+  const mockUpdateCounterValue = jest.fn();
+
   useCounter.mockReturnValue({
     counterValue: 10,
     loading: false,
-    updateCounterValue: jest.fn(),
+    updateCounterValue: mockUpdateCounterValue,
   });
 
-  render(<App />);
+  const { rerender } = render(<App />);
 
   const counterElement = screen.getByText(/Counter Value: 10/i);
   expect(counterElement).toBeInTheDocument();
+
+  const incrementButton = screen.getByText(/Increment Counter/i);
+  fireEvent.click(incrementButton);
+
+  expect(mockUpdateCounterValue).toHaveBeenCalledWith(11);
+
+  useCounter.mockReturnValue({
+    counterValue: 11,
+    loading: false,
+    updateCounterValue: mockUpdateCounterValue,
+  });
+
+  rerender(<App />);
+
+  const counterElementUpdated = screen.getByText(/Counter Value: 11/i);
+  expect(counterElementUpdated).toBeInTheDocument();
 });
