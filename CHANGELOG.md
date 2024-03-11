@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.3 (2024-03-11)
+
+- Adding advance test for counter behavior
+
 ## 1.0.2 (2024-03-10)
 
 - Add test for counter behavior
